@@ -4,23 +4,25 @@ package com.company;
 //2. Реализовать класс в конструкторе которого будет счетчик количества создаваемых объектов.
 // Написать метод для получения информации о количестве.
 
-class Construktor {
-    int a;
-    int b;
+class Construktor {  //класс
+
     static int NumberOfObjects =0;
 
-    Construktor (){}
+    Construktor (){  //конструктор
+               NumberOfObjects++;
+    }
 
+public static int GetNumberOfObjects() { //метод
+        return (NumberOfObjects);
 
-public int GetNumberOfObjects() {
-        ;
         }
 }
-
-
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+                Construktor Constr1 = new Construktor ();
+        Construktor Constr2 = new Construktor ();
+        System.out.println("Количество объектов класса "+Construktor.GetNumberOfObjects());
+
     }
 }
